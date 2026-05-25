@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kancelaria Adwokacka Joanna Starzec - Orlik — Kraków</title>
+<meta name="description" content="Kancelaria Adwokacka Joanna Starzec - Orlik. Prawo rodzinne, spadkowe, cywilne, gospodarcze. Kraków." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:   "#F8F6F1",
+          cream2:  "#F2EFE7",
+          sand:    "#D4C5A9",
+          sand2:   "#E8DEC8",
+          line:    "#E5E0D5",
+          ink:     "#14110F",
+          ink2:    "#1A1A1A",
+          mute:    "#6B6358",
+          accent:  "#2D3E2E",
+          accent2: "#3A4F3B",
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+          sans:  ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          warm: "0 20px 40px -28px rgba(80,60,30,.22), 0 2px 6px -2px rgba(80,60,30,.08)",
+          warmlg: "0 30px 60px -32px rgba(80,60,30,.28), 0 4px 10px -3px rgba(80,60,30,.10)",
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #F8F6F1;
+    color: #1A1A1A;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01","cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  .font-serif { font-family: "Cormorant Garamond", Georgia, serif; }
+  .eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #6B6358;
+  }
+  .hairline { border-color: #E5E0D5; }
+  .num-serif { font-variant-numeric: oldstyle-nums; }
+
+  /* Hero display sizes */
+  .display {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -0.012em;
+    font-size: clamp(2.2rem, 5.2vw, 4.4rem);
+  }
+  .display em { font-style: italic; font-weight: 400; color: #2D3E2E; }
+  .h-section {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.012em;
+    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  }
+  .h-section em { font-style: italic; }
+
+  /* Subtle vertical rule beside section eyebrows */
+  .eyebrow-rule::before {
+    content: "";
+    display: inline-block;
+    width: 28px; height: 1px;
+    background: #C9BFA8;
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: .85rem 1.25rem;
+    font-size: 14px; letter-spacing: .02em;
+    border-radius: 2px;
+    transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .btn-primary { background: #2D3E2E; color: #F8F6F1; }
+  .btn-primary:hover { background: #1E2B1F; transform: translateY(-1px); }
+  .btn-ghost { color: #1A1A1A; border: 1px solid #1A1A1A; }
+  .btn-ghost:hover { background: #1A1A1A; color: #F8F6F1; }
+  .btn-arrow { transition: transform .25s ease; display: inline-block; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Nav */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
+    height: 1px; background: #1A1A1A; transform: scaleX(0); transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* Inputs underline-only */
+  .field {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #C9BFA8;
+    padding: .9rem 0 .8rem;
+    font-size: 15px;
+    color: #1A1A1A;
+    outline: none;
+    transition: border-color .25s ease;
+  }
+  .field::placeholder { color: #9C9485; }
+  .field:focus { border-color: #2D3E2E; }
+  textarea.field { min-height: 6rem; resize: vertical; }
+  .field-label { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6B6358; }
+
+  /* Cards */
+  .card {
+    background: #FBFAF6;
+    border: 1px solid #E5E0D5;
+    border-radius: 4px;
+    transition: transform .35s ease, box-shadow .35s ease, background .35s ease, border-color .35s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -32px rgba(80,60,30,.30), 0 4px 10px -4px rgba(80,60,30,.08); }
+  .practice:hover { background: #F2EFE7; border-color: #D4C5A9; }
+
+  /* Image treatment */
+  .portrait {
+    filter: saturate(.82) contrast(.98);
+  }
+
+  /* Decorative quote glyph */
+  .deco-quote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 0.8;
+    font-size: clamp(12rem, 22vw, 22rem);
+    color: rgba(212,197,169,0.18);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Hero scroll indicator */
+  .scroll-ind {
+    width: 1px; height: 56px;
+    background: linear-gradient(to bottom, transparent, #1A1A1A);
+    position: relative;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity:.3; transform: scaleY(.8);} 50% { opacity:.9; transform: scaleY(1);} }
+
+  /* Sticky nav backdrop */
+  #nav { transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease, padding .35s ease; }
+  #nav.scrolled {
+    background: rgba(248,246,241,0.78);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid #E5E0D5;
+  }
+
+  /* Mobile drawer */
+  #mobileMenu {
+    transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
+    transform: translateY(-12px);
+    opacity: 0; pointer-events: none;
+  }
+  #mobileMenu.open { transform: none; opacity: 1; pointer-events: auto; }
+
+  /* Comparison table */
+  .cmp { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+  .cmp > div { padding: 1.05rem 1rem; border-bottom: 1px solid #E5E0D5; }
+  .cmp .cmp-head { font-family: "Cormorant Garamond", serif; font-size: 1.4rem; }
+  .cmp .row-label { font-family: "Cormorant Garamond", serif; font-size: 1.18rem; color: #14110F; }
+  @media (max-width: 800px) {
+    .cmp { grid-template-columns: 1fr 1fr; }
+    .cmp .hide-mb { display: none; }
+  }
+
+  /* Hero photo placeholder pattern */
+  .photo-ph {
+    background:
+      repeating-linear-gradient(135deg, rgba(20,17,15,.05) 0 1px, transparent 1px 12px),
+      linear-gradient(180deg, #EDE6D4 0%, #D9CDB1 100%);
+    color: #5C5240;
+  }
+  .photo-ph .meta {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  }
+
+  /* Number plate for approach steps */
+  .step-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    line-height: 1;
+    color: #2D3E2E;
+    font-feature-settings: "lnum";
+  }
+
+  /* Subtle divider */
+  .divider { height: 1px; background: #E5E0D5; }
+
+  /* Focus visible */
+  :focus-visible { outline: 2px solid #2D3E2E; outline-offset: 3px; border-radius: 2px; }
+
+  /* Logo */
+  .logo {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: .22em;
+    font-weight: 500;
+  }
+  .logo .amp { color: #2D3E2E; }
+
+  /* Section padding */
+  .sec { padding-top: 6rem; padding-bottom: 6rem; }
+  @media (min-width: 768px) { .sec { padding-top: 8rem; padding-bottom: 8rem; } }
+  @media (min-width: 1024px) { .sec { padding-top: 10rem; padding-bottom: 10rem; } }
+
+  .container-x { max-width: 1280px; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+  @media (min-width: 1280px) { .container-x { padding-inline: 3rem; } }
+</style>
+</head>
+
+<body class="bg-cream text-ink2">
+
+<!-- ============================== NAV ============================== -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50">
+  <div class="container-x flex items-center justify-between py-5">
+    <a href="#top" class="logo leading-[1.2] flex flex-col">
+      <span class="text-[10.5px] tracking-[.22em] uppercase text-mute font-sans font-medium">Kancelaria Adwokacka</span>
+      <span class="text-[16px] md:text-[18px] tracking-[.02em] text-ink2 mt-0.5">Joanna Starzec - Orlik</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-9 text-[13.5px] text-ink2">
+      <a class="nav-link" href="#hero">Strona główna</a>
+      <a class="nav-link" href="#about">O mnie</a>
+      <a class="nav-link" href="#practice">Specjalizacje</a>
+      <a class="nav-link" href="#approach">Podejście</a>
+      <a class="nav-link" href="#contact">Kontakt</a>
+    </nav>
+
+    <div class="hidden md:block">
+      <a href="#contact" class="btn btn-primary">Umów konsultację <span class="btn-arrow">→</span></a>
+    </div>
+
+    <button id="hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10" aria-label="Otwórz menu">
+      <span id="hamIcon" class="block w-6 h-[1.5px] bg-ink2 relative">
+        <span class="absolute left-0 right-0 -top-2 h-[1.5px] bg-ink2"></span>
+        <span class="absolute left-0 right-0 top-2 h-[1.5px] bg-ink2"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobileMenu" class="md:hidden absolute top-full inset-x-0 bg-cream border-b hairline">
+    <nav class="container-x flex flex-col gap-1 py-6 text-[15px]">
+      <a class="py-3 border-b hairline" href="#hero">Strona główna</a>
+      <a class="py-3 border-b hairline" href="#about">O mnie</a>
+      <a class="py-3 border-b hairline" href="#practice">Specjalizacje</a>
+      <a class="py-3 border-b hairline" href="#approach">Podejście</a>
+      <a class="py-3 border-b hairline" href="#contact">Kontakt</a>
+      <a href="#contact" class="btn btn-primary mt-4 self-start">Umów konsultację <span class="btn-arrow">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ============================== HERO ============================== -->
+<section id="hero" class="relative pt-32 md:pt-36 pb-20">
+  <div class="container-x grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+    <div class="lg:col-span-7 lg:mt-24 reveal">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="eyebrow">Adwokat · Kraków</span>
+      </div>
+
+      <h1 class="display">
+        Pewne wsparcie<br />
+        <span class="text-accent">w ważnych sprawach.</span>
+      </h1>
+
+      <p class="mt-8 max-w-[60ch] text-[17px] md:text-[18px] leading-[1.7] text-ink2/85">
+        Przeprowadzam Cię przez zawiłości prawa w sposób zrozumiały i spokojny — żebyś mógł skupić się na tym, co dla Ciebie naprawdę ważne.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="#contact" class="btn btn-primary">Umów konsultację <span class="btn-arrow">→</span></a>
+        <a href="#about" class="btn btn-ghost">Poznaj kancelarię</a>
+      </div>
+
+      <div class="mt-6 text-[12.5px] text-mute">
+        Konsultacja online lub w kancelarii
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 reveal">
+      <!-- Portrait placeholder — replace with real photo (3:4) -->
+      <figure class="relative">
+        <div class="photo-ph portrait aspect-[3/4] rounded-sm overflow-hidden flex flex-col justify-between p-6">
+          <div class="meta">Portret · 3:4 · neutralny</div>
+          <div class="self-center text-center">
+            <div class="font-serif text-[3.5rem] leading-none">JS</div>
+            <div class="meta mt-3">[ Zdjęcie portretowe ]</div>
+          </div>
+          <div class="meta text-right">replace ➝ /img/portrait.jpg</div>
+        </div>
+        <figcaption class="mt-3 text-[12px] text-mute flex justify-between">
+          <span class="eyebrow">— adw. Joanna Starzec - Orlik</span>
+          <span>Kraków, 2026</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- scroll indicator removed -->
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about" class="sec border-t hairline">
+  <div class="container-x grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+    <div class="lg:col-span-5 reveal">
+      <div class="photo-ph portrait aspect-[4/5] rounded-sm overflow-hidden flex flex-col justify-between p-6">
+        <div class="meta">O mnie · 4:5</div>
+        <div class="self-center text-center">
+          <div class="font-serif italic text-[2rem] leading-none">„Słuchać, zanim się doradzi.”</div>
+        </div>
+        <div class="meta text-right">replace ➝ /img/about.jpg</div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Poznajmy się</p>
+      <h2 class="h-section">
+        Joanna Starzec - Orlik
+      </h2>
+      <p class="mt-3 text-[14px] tracking-wide text-mute">Adwokat, założycielka kancelarii</p>
+
+      <div class="mt-8 space-y-5 max-w-[58ch] text-[17px] leading-[1.75] text-ink2/90">
+        <p>
+          Pracuję z klientami, dla których prawo nigdy nie było <em class="font-serif italic">tylko</em> formalnością — bo za każdą sprawą stoi rodzina, dorobek życia, biznes albo decyzja, której nie można cofnąć.
+        </p>
+        <p>
+          Od ponad dwunastu lat prowadzę sprawy z zakresu prawa rodzinnego, spadkowego, cywilnego i gospodarczego. Łączę dokładność procesową ze spokojem rozmowy — bo dobre rozwiązanie zaczyna się od tego, że ktoś naprawdę słucha.
+        </p>
+        <p>
+          Wierzę w prostotę języka i konsekwencję w działaniu. Klient kancelarii powinien czuć, że ktoś trzyma sprawę w garści — bez teatru, bez przerysowanych obietnic, z pełną odpowiedzialnością.
+        </p>
+      </div>
+
+      <dl class="mt-10 grid grid-cols-2 gap-6 max-w-md">
+        <div>
+          <dt class="eyebrow">Praktyka</dt>
+          <dd class="font-serif text-3xl mt-2 num-serif">12+</dd>
+          <dd class="text-[12.5px] text-mute mt-1">lat doświadczenia</dd>
+        </div>
+        <div>
+          <dt class="eyebrow">Sprawy</dt>
+          <dd class="font-serif text-3xl mt-2 num-serif">340</dd>
+          <dd class="text-[12.5px] text-mute mt-1">prowadzonych łącznie</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PILLARS ============================== -->
+<section class="sec border-t hairline bg-cream2/40">
+  <div class="container-x">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="eyebrow mb-5">Jestem tutaj dla Ciebie</p>
+      <h2 class="h-section">
+        Szukasz pomocy prawnej?<br /><em>Dobrze trafiłeś.</em>
+      </h2>
+      <p class="mt-6 text-[17px] leading-[1.7] text-ink2/85 max-w-[55ch] mx-auto">
+        Trzy typowe sytuacje, w których klienci najczęściej proszą mnie o wsparcie — być może rozpoznasz w jednej z nich własną.
+      </p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-5 md:gap-6">
+      <!-- card 1 -->
+      <article class="card p-8 reveal flex flex-col h-full">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="6" y="9" width="28" height="24" rx="1.5"/>
+          <path d="M6 16h28"/>
+          <path d="M14 22h12M14 26h8"/>
+        </svg>
+        <h3 class="font-serif text-[1.9rem] leading-tight mt-7">Uporządkuj sprawy majątkowe</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.7] text-ink2/85">
+          Umowy, intercyzy, podział majątku, darowizny. Spokojne, dokładne uporządkowanie tego, co Twoje — zanim staje się przedmiotem sporu.
+        </p>
+        <a href="#contact" class="btn-arrow inline-flex items-center gap-2 mt-auto pt-8 text-[13.5px] tracking-wide text-accent">Porozmawiajmy <span>→</span></a>
+      </article>
+
+      <!-- card 2 -->
+      <article class="card p-8 reveal flex flex-col h-full">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M20 5l13 5v9c0 8-5.5 13-13 16-7.5-3-13-8-13-16v-9l13-5z"/>
+          <path d="M14 20l4 4 8-8"/>
+        </svg>
+        <h3 class="font-serif text-[1.9rem] leading-tight mt-7">Przejdź bezpiecznie przez skomplikowaną sprawę</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.7] text-ink2/85">
+          Sprawy rozwodowe, alimentacyjne, spadkowe, gospodarcze — z jasną strategią i obecnością na każdym etapie postępowania.
+        </p>
+        <a href="#contact" class="btn-arrow inline-flex items-center gap-2 mt-auto pt-8 text-[13.5px] tracking-wide text-accent">Porozmawiajmy <span>→</span></a>
+      </article>
+
+      <!-- card 3 -->
+      <article class="card p-8 reveal flex flex-col h-full">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M8 33V17l12-9 12 9v16"/>
+          <path d="M14 33V23h12v10"/>
+          <path d="M8 33h24"/>
+        </svg>
+        <h3 class="font-serif text-[1.9rem] leading-tight mt-7">Zabezpiecz przyszłość najbliższych</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.7] text-ink2/85">
+          Testamenty, plany sukcesyjne, zachowek, opieka nad dziećmi. Decyzje, których nie zostawia się przypadkowi.
+        </p>
+        <a href="#contact" class="btn-arrow inline-flex items-center gap-2 mt-auto pt-8 text-[13.5px] tracking-wide text-accent">Porozmawiajmy <span>→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== APPROACH ============================== -->
+<section id="approach" class="sec border-t hairline">
+  <div class="container-x grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+    <div class="lg:col-span-5 reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Moje podejście</p>
+      <h2 class="h-section">
+        Pomoc prawna <em>bez stresu</em> i niedomówień.
+      </h2>
+      <p class="mt-6 text-[17px] leading-[1.7] text-ink2/85 max-w-[40ch]">
+        Trzy zasady, które towarzyszą każdej współpracy — niezależnie od skali sprawy i kalibru przeciwnika.
+      </p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="divider"></div>
+
+      <div class="grid grid-cols-[auto_1fr] gap-x-8 md:gap-x-14 gap-y-0 items-start py-10 reveal">
+        <span class="step-num num-serif">01</span>
+        <div>
+          <h3 class="font-serif text-[1.8rem] leading-tight">Zrozumienie Twojej sytuacji</h3>
+          <p class="mt-3 text-[16px] leading-[1.7] text-ink2/85 max-w-[55ch]">
+            Zaczynam od rozmowy bez zegarka. Muszę wiedzieć, co naprawdę leży na stole — fakty, emocje, realne cele. Dopiero potem piszę strategię.
+          </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="grid grid-cols-[auto_1fr] gap-x-8 md:gap-x-14 gap-y-0 items-start py-10 reveal">
+        <span class="step-num num-serif">02</span>
+        <div>
+          <h3 class="font-serif text-[1.8rem] leading-tight">Kompleksowe wsparcie</h3>
+          <p class="mt-3 text-[16px] leading-[1.7] text-ink2/85 max-w-[55ch]">
+            Prowadzę sprawę od pierwszej rozmowy do prawomocnego wyroku. Nie odsyłam, nie deleguję na asystenta, nie zostawiam pytań bez odpowiedzi.
+          </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="grid grid-cols-[auto_1fr] gap-x-8 md:gap-x-14 gap-y-0 items-start py-10 reveal">
+        <span class="step-num num-serif">03</span>
+        <div>
+          <h3 class="font-serif text-[1.8rem] leading-tight">Trwała relacja</h3>
+          <p class="mt-3 text-[16px] leading-[1.7] text-ink2/85 max-w-[55ch]">
+            Większość moich klientów wraca — z kolejną umową, drugą sprawą, pytaniem o dziecko, o firmę, o testament. To największy komplement zawodu.
+          </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL ============================== -->
+<section class="relative bg-accent text-cream overflow-hidden">
+  <span class="deco-quote absolute -top-10 left-6 md:left-16">”</span>
+  <div class="container-x relative sec">
+    <div class="max-w-4xl reveal">
+      <p class="eyebrow text-sand mb-6">Słowa klientów</p>
+      <blockquote class="font-serif italic font-light text-[clamp(1.9rem,4.2vw,3.2rem)] leading-[1.18] tracking-[-0.005em]">
+        „Pani mecenas sprawiła, że trudna sprawa stała się prosta do przejścia. Czuliśmy się <span class="not-italic">zaopiekowani</span> od początku do końca — bez pośpiechu, bez prawniczej mgły.”
+      </blockquote>
+      <footer class="mt-10 flex items-center gap-5">
+        <div class="w-12 h-12 rounded-full bg-sand/30 grid place-items-center font-serif text-cream text-lg">JS</div>
+        <div>
+          <div class="text-cream text-[15px]">Joanna S.</div>
+          <div class="text-cream/70 text-[12.5px] tracking-wide">Klientka indywidualna · sprawa spadkowa</div>
+        </div>
+      </footer>
+
+      <!-- mini pagination -->
+      <div class="mt-12 flex items-center gap-3 text-cream/60 text-[12px] tracking-wide">
+        <span class="w-6 h-px bg-cream/80"></span>
+        <span>01 — 04</span>
+        <span class="w-6 h-px bg-cream/30"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRACTICE AREAS ============================== -->
+<section id="practice" class="sec">
+  <div class="container-x">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 reveal">
+      <div>
+        <p class="eyebrow eyebrow-rule mb-5">Obszary praktyki</p>
+        <h2 class="h-section max-w-[18ch]">Sprawy, które prowadzę osobiście.</h2>
+      </div>
+      <p class="text-[16px] leading-[1.7] text-ink2/80 max-w-[42ch]">
+        Skoncentrowana praktyka oznacza, że na każdym spotkaniu wiesz, z kim rozmawiasz — i że to ten sam adwokat poprowadzi Twoją sprawę na sali rozpraw.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border hairline">
+      <!-- each item -->
+      <a href="prawo-rodzinne.html" class="practice card !rounded-none !border-0 p-8 group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow num-serif">01</div>
+            <h3 class="font-serif text-[1.9rem] leading-tight mt-3">Prawo rodzinne</h3>
+          </div>
+          <span class="text-accent text-2xl btn-arrow">→</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2/80">
+          Rozwody, alimenty, władza rodzicielska, kontakty z dzieckiem, podział majątku po ustaniu wspólności.
+        </p>
+      </a>
+
+      <a href="#contact" class="practice card !rounded-none !border-0 p-8 group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow num-serif">02</div>
+            <h3 class="font-serif text-[1.9rem] leading-tight mt-3">Prawo spadkowe</h3>
+          </div>
+          <span class="text-accent text-2xl btn-arrow">→</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2/80">
+          Stwierdzenie nabycia spadku, dział spadku, zachowek, testamenty i plany sukcesyjne dla rodzin oraz firm.
+        </p>
+      </a>
+
+      <a href="#contact" class="practice card !rounded-none !border-0 p-8 group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow num-serif">03</div>
+            <h3 class="font-serif text-[1.9rem] leading-tight mt-3">Prawo cywilne</h3>
+          </div>
+          <span class="text-accent text-2xl btn-arrow">→</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2/80">
+          Umowy, odszkodowania, sprawy konsumenckie, nieruchomości, służebności, zniesienie współwłasności.
+        </p>
+      </a>
+
+      <a href="#contact" class="practice card !rounded-none !border-0 p-8 group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow num-serif">04</div>
+            <h3 class="font-serif text-[1.9rem] leading-tight mt-3">Prawo gospodarcze</h3>
+          </div>
+          <span class="text-accent text-2xl btn-arrow">→</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2/80">
+          Stała obsługa spółek, umowy B2B, spory gospodarcze, dochodzenie należności, restrukturyzacja.
+        </p>
+      </a>
+
+      <a href="#contact" class="practice card !rounded-none !border-0 p-8 group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow num-serif">05</div>
+            <h3 class="font-serif text-[1.9rem] leading-tight mt-3">Prawo karne</h3>
+          </div>
+          <span class="text-accent text-2xl btn-arrow">→</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2/80">
+          Obrona w postępowaniu przygotowawczym i sądowym, sprawy karno-skarbowe, wykroczenia, reprezentacja pokrzywdzonych.
+        </p>
+      </a>
+
+      <a href="#contact" class="practice card !rounded-none !border-0 p-8 group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow num-serif">06</div>
+            <h3 class="font-serif text-[1.9rem] leading-tight mt-3">Prawo pracy</h3>
+          </div>
+          <span class="text-accent text-2xl btn-arrow">→</span>
+        </div>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2/80">
+          Spory ze stosunku pracy, mobbing i dyskryminacja, kontrakty menedżerskie, dokumentacja kadrowa.
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AUDIENCES ============================== -->
+<section class="sec border-t hairline">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Komu pomagam</p>
+      <h2 class="h-section">Dwa rodzaje klientów. <em>To samo zaangażowanie.</em></h2>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-6">
+      <article class="card p-10 lg:p-12 reveal flex flex-col h-full">
+        <h3 class="font-serif text-[2.3rem] md:text-[2.6rem] leading-tight min-h-[5.5rem] md:min-h-[6.5rem]">Klienci indywidualni i rodziny</h3>
+        <p class="mt-5 text-[16px] leading-[1.75] text-ink2/85 max-w-[42ch]">
+          Rozwód, spadek, alimenty, sprawa o nieruchomość, testament. Sprawy, które dzieją się raz w życiu — i muszą być przeprowadzone dobrze.
+        </p>
+        <ul class="mt-7 space-y-2 text-[14.5px] text-ink2/80">
+          <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Spotkania w kancelarii lub online</li>
+          <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Stała stawka po wstępnej analizie</li>
+        </ul>
+        <div class="mt-auto pt-10"><a href="#contact" class="btn btn-ghost">Porozmawiajmy <span class="btn-arrow">→</span></a></div>
+      </article>
+
+      <article class="card p-10 lg:p-12 reveal flex flex-col h-full">
+        <h3 class="font-serif text-[2.3rem] md:text-[2.6rem] leading-tight min-h-[5.5rem] md:min-h-[6.5rem]">Przedsiębiorcy i firmy</h3>
+        <p class="mt-5 text-[16px] leading-[1.75] text-ink2/85 max-w-[42ch]">
+          Spółki, startupy, rodzinne biznesy. Stała obsługa, kontrakty, spory handlowe i sukcesja — z poczuciem, że ktoś trzyma rękę na pulsie.
+        </p>
+        <ul class="mt-7 space-y-2 text-[14.5px] text-ink2/80">
+          <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Stałe pakiety obsługi prawnej</li>
+          <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Reprezentacja w sądach gospodarczych</li>
+          <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span>Audyt i przygotowanie kontraktów</li>
+        </ul>
+        <div class="mt-auto pt-10"><a href="#contact" class="btn btn-ghost">Porozmawiajmy <span class="btn-arrow">→</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COMPARE ============================== -->
+<section class="sec border-t hairline bg-cream2/40">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Dlaczego moja kancelaria?</p>
+      <h2 class="h-section">Wybierz to, <em>na czym Ci zależy.</em></h2>
+      <p class="mt-6 text-[16px] leading-[1.7] text-ink2/85 max-w-[55ch]">
+        Bez przesadnego marketingu — uczciwe zestawienie tego, co znajdziesz tu, a co u konkurencji. Sam zdecyduj.
+      </p>
+    </div>
+
+    <div class="mt-14 reveal bg-cream rounded-sm border hairline overflow-hidden">
+      <div class="cmp">
+        <div class="cmp-head"></div>
+        <div class="cmp-head text-accent">Moja kancelaria</div>
+        <div class="cmp-head hide-mb">Duża kancelaria</div>
+        <div class="cmp-head hide-mb">Usługi online</div>
+
+        <!-- row -->
+        <div class="row-label">Adwokat prowadzący sprawę osobiście</div>
+        <div class="text-accent">✓ <span class="text-[13px] text-ink2/70 ml-1">na każdym etapie</span></div>
+        <div class="hide-mb text-mute">≈ <span class="text-[13px] ml-1">zespół, zmienne osoby</span></div>
+        <div class="hide-mb text-mute">✗ <span class="text-[13px] ml-1">tylko formularze</span></div>
+
+        <div class="row-label">Czas pierwszej odpowiedzi</div>
+        <div class="text-accent">do 24h</div>
+        <div class="hide-mb text-mute">2–5 dni</div>
+        <div class="hide-mb text-mute">automatycznie</div>
+
+        <div class="row-label">Wycena z góry, bez ukrytych kosztów</div>
+        <div class="text-accent">✓</div>
+        <div class="hide-mb text-mute">≈</div>
+        <div class="hide-mb text-mute">✓</div>
+
+        <div class="row-label">Indywidualna strategia procesowa</div>
+        <div class="text-accent">✓</div>
+        <div class="hide-mb text-accent">✓</div>
+        <div class="hide-mb text-mute">✗</div>
+
+        <div class="row-label">Reprezentacja na sali rozpraw</div>
+        <div class="text-accent">✓</div>
+        <div class="hide-mb text-accent">✓</div>
+        <div class="hide-mb text-mute">✗</div>
+
+        <div class="row-label" style="border-bottom:0">Relacja ludzka, nie korporacyjna</div>
+        <div class="text-accent" style="border-bottom:0">✓</div>
+        <div class="hide-mb text-mute" style="border-bottom:0">✗</div>
+        <div class="hide-mb text-mute" style="border-bottom:0">✗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact" class="sec border-t hairline">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Kontakt</p>
+      <h2 class="h-section">Przejdź przez wyzwania prawne <em>ze spokojem.</em></h2>
+      <p class="mt-6 text-[17px] leading-[1.7] text-ink2/85 max-w-[55ch]">
+        Napisz w kilku zdaniach, w czym mogę pomóc. Odpowiem osobiście w ciągu jednego dnia roboczego — zaproponuję termin krótkiej rozmowy lub spotkania.
+      </p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+      <!-- left: details -->
+      <aside class="lg:col-span-5 reveal">
+        <div class="space-y-10">
+          <div>
+            <p class="eyebrow">Kancelaria</p>
+            <p class="font-serif text-[1.6rem] leading-snug mt-3">
+              ul. [ADRES], 00-000 [MIASTO]<br />
+              <span class="text-ink2/70 text-[1.15rem]">II piętro, wejście od dziedzińca</span>
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <p class="eyebrow">Telefon</p>
+              <a href="tel:+48000000000" class="font-serif text-[1.4rem] mt-3 inline-block hover:text-accent">+48 [TELEFON]</a>
+            </div>
+            <div>
+              <p class="eyebrow">E-mail</p>
+              <a href="/cdn-cgi/l/email-protection#a2c9cdccd6c3c9d6e2c9c3ccc1c7cec3d0cbc38cd2ce" class="font-serif text-[1.4rem] mt-3 inline-block hover:text-accent">[EMAIL]</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="eyebrow">Godziny przyjęć</p>
+            <dl class="font-serif text-[1.25rem] mt-3 space-y-1">
+              <div class="flex justify-between max-w-[18rem]"><dt>Poniedziałek — Czwartek</dt><dd>9:00 — 18:00</dd></div>
+              <div class="flex justify-between max-w-[18rem]"><dt>Piątek</dt><dd>9:00 — 15:00</dd></div>
+              <div class="flex justify-between max-w-[18rem] text-mute"><dt>Sobota i Niedziela</dt><dd>po umówieniu</dd></div>
+            </dl>
+          </div>
+
+          <div class="pt-2">
+            <p class="eyebrow mb-3">Także</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[12.5px] px-3 py-1.5 border hairline rounded-sm">Konsultacja online</span>
+              <span class="text-[12.5px] px-3 py-1.5 border hairline rounded-sm">Dojazd do klienta</span>
+              <span class="text-[12.5px] px-3 py-1.5 border hairline rounded-sm">PL · EN</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- right: form -->
+      <form id="contactForm" class="lg:col-span-7 reveal" novalidate>
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-7">
+          <label class="block">
+            <span class="field-label">Imię i nazwisko</span>
+            <input class="field" name="name" type="text" placeholder="Jak się do Ciebie zwracać?" required />
+          </label>
+          <label class="block">
+            <span class="field-label">E-mail</span>
+            <input class="field" name="email" type="email" placeholder="twoj@email.pl" required />
+          </label>
+          <label class="block">
+            <span class="field-label">Telefon (opcjonalnie)</span>
+            <input class="field" name="phone" type="tel" placeholder="+48" />
+          </label>
+          <label class="block">
+            <span class="field-label">Skąd dowiedziałeś się o kancelarii?</span>
+            <select class="field" name="source">
+              <option value="">— wybierz —</option>
+              <option>Polecenie</option>
+              <option>Google</option>
+              <option>Media społecznościowe</option>
+              <option>Wcześniejsza współpraca</option>
+              <option>Inne</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="field-label">W czym mogę pomóc?</span>
+            <textarea class="field" name="message" placeholder="Krótko opisz swoją sprawę — bez szczegółów wrażliwych. To zostanie między nami." required></textarea>
+          </label>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <p class="text-[12px] text-mute leading-relaxed max-w-md">
+            Wysyłając formularz akceptujesz <a class="underline underline-offset-2" href="#">politykę prywatności</a>. Wiadomość objęta jest tajemnicą adwokacką po nawiązaniu współpracy.
+          </p>
+          <button type="submit" class="btn btn-primary self-start sm:self-auto">
+            <span id="submitText">Wyślij wiadomość</span> <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+        <p id="formOk" class="hidden mt-6 text-[14px] text-accent">Dziękuję — wiadomość została zarejestrowana. Odpowiem osobiście w ciągu jednego dnia roboczego.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-ink text-cream">
+  <div class="container-x pt-20 pb-10">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <div class="logo leading-[1.2] flex flex-col">
+          <span class="text-[10.5px] tracking-[.22em] uppercase text-sand font-sans font-medium">Kancelaria Adwokacka</span>
+          <span class="text-[18px] tracking-[.02em] text-cream mt-0.5">Joanna Starzec - Orlik</span>
+        </div>
+        <p class="mt-6 text-[15px] leading-[1.7] text-cream/75 max-w-md">
+          Kancelaria Adwokacka adw. Joanny Starzec - Orlik. Praktyka skoncentrowana na prawie rodzinnym, spadkowym, cywilnym i gospodarczym. [MIASTO] · cała Polska.
+        </p>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="eyebrow text-sand">Nawigacja</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-cream/85">
+          <li><a class="hover:text-sand" href="#hero">Strona główna</a></li>
+          <li><a class="hover:text-sand" href="#about">O mnie</a></li>
+          <li><a class="hover:text-sand" href="#practice">Specjalizacje</a></li>
+          <li><a class="hover:text-sand" href="#approach">Podejście</a></li>
+          <li><a class="hover:text-sand" href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="eyebrow text-sand">Kontakt</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-cream/85">
+          <li>ul. [ADRES], 00-000 [MIASTO]</li>
+          <li><a class="hover:text-sand" href="tel:+48000000000">+48 [TELEFON]</a></li>
+          <li><a class="hover:text-sand" href="/cdn-cgi/l/email-protection#3e5551504a5f554a7e555f505d5b525f4c575f104e52">[EMAIL]</a></li>
+          <li class="text-cream/55 text-[13px] pt-2">NIP 000-000-00-00 · Izba Adwokacka w [MIASTO]</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-[12.5px] text-cream/65">
+      <div>© 2026 Kancelaria Adwokacka Joanna Starzec - Orlik. Wszystkie prawa zastrzeżone.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-sand">Polityka prywatności</a>
+        <a href="#" class="hover:text-sand">Regulamin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== JS ============================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Sticky nav style on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  const hamIcon = document.getElementById('hamIcon');
+  ham.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    ham.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form fake submit
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ok = form.checkValidity();
+    if (!ok) { form.reportValidity(); return; }
+    document.getElementById('submitText').textContent = 'Wysłano';
+    document.getElementById('formOk').classList.remove('hidden');
+    form.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+  });
+</script>
+
+</body>
+</html>

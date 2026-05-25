@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Prawo rodzinne — Kancelaria Adwokacka Joanna Starzec - Orlik, Kraków</title>
+<meta name="description" content="Sprawy rozwodowe, podział majątku, alimenty, władza rodzicielska, kontakty z dzieckiem. Kancelaria Adwokacka Joanna Starzec - Orlik, Kraków." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:   "#F8F6F1",
+          cream2:  "#F2EFE7",
+          sand:    "#D4C5A9",
+          sand2:   "#E8DEC8",
+          line:    "#E5E0D5",
+          ink:     "#14110F",
+          ink2:    "#1A1A1A",
+          mute:    "#6B6358",
+          accent:  "#2D3E2E",
+          accent2: "#3A4F3B",
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+          sans:  ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #F8F6F1;
+    color: #1A1A1A;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .font-serif { font-family: "Cormorant Garamond", Georgia, serif; }
+
+  .eyebrow {
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #6B6358;
+  }
+  .eyebrow-rule::before {
+    content: ""; display: inline-block;
+    width: 28px; height: 1px; background: #C9BFA8;
+    margin-right: 14px; vertical-align: middle;
+  }
+  .hairline { border-color: #E5E0D5; }
+  .num-serif { font-variant-numeric: oldstyle-nums; }
+
+  .display {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.012em;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+  }
+  .display em { font-style: italic; color: #2D3E2E; }
+  .h-section {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  }
+  .h-section em { font-style: italic; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: .55rem;
+    padding: .85rem 1.25rem;
+    font-size: 14px; letter-spacing: .02em;
+    border-radius: 2px;
+    transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn-primary { background: #2D3E2E; color: #F8F6F1; }
+  .btn-primary:hover { background: #1E2B1F; transform: translateY(-1px); }
+  .btn-ghost { color: #1A1A1A; border: 1px solid #1A1A1A; }
+  .btn-ghost:hover { background: #1A1A1A; color: #F8F6F1; }
+  .btn-arrow { transition: transform .25s ease; display: inline-block; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Nav */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
+    height: 1px; background: #1A1A1A; transform: scaleX(0); transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+  .nav-link.active::after { transform: scaleX(1); background: #2D3E2E; }
+
+  /* Inputs underline-only */
+  .field {
+    width: 100%; background: transparent; border: 0;
+    border-bottom: 1px solid #C9BFA8;
+    padding: .9rem 0 .8rem;
+    font-size: 15px; color: #1A1A1A;
+    outline: none; transition: border-color .25s ease;
+  }
+  .field::placeholder { color: #9C9485; }
+  .field:focus { border-color: #2D3E2E; }
+  textarea.field { min-height: 6rem; resize: vertical; }
+  .field-label { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #6B6358; }
+
+  /* Cards */
+  .card {
+    background: #FBFAF6;
+    border: 1px solid #E5E0D5;
+    border-radius: 4px;
+    transition: transform .35s ease, box-shadow .35s ease, background .35s ease, border-color .35s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -32px rgba(80,60,30,.30), 0 4px 10px -4px rgba(80,60,30,.08); }
+  .service { transition: background .35s ease, border-color .35s ease, transform .35s ease; }
+  .service:hover { background: #F2EAD8; border-color: #D4C5A9; }
+  .service:hover .svc-arrow { transform: translateX(4px); }
+  .svc-arrow { transition: transform .35s ease; }
+
+  /* Decorative quote glyph */
+  .deco-quote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic; font-weight: 500;
+    line-height: 0.8;
+    font-size: clamp(12rem, 22vw, 22rem);
+    color: rgba(212,197,169,0.18);
+    user-select: none; pointer-events: none;
+  }
+
+  /* Sticky nav backdrop */
+  #nav { transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease; }
+  #nav.scrolled {
+    background: rgba(248,246,241,0.82);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid #E5E0D5;
+  }
+
+  /* Mobile drawer */
+  #mobileMenu {
+    transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
+    transform: translateY(-12px); opacity: 0; pointer-events: none;
+  }
+  #mobileMenu.open { transform: none; opacity: 1; pointer-events: auto; }
+
+  /* FAQ accordion */
+  .faq-item summary { list-style: none; cursor: pointer; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-icon { transition: transform .4s cubic-bezier(.2,.7,.2,1); transform-origin: center; }
+  .faq-item[open] .faq-icon { transform: rotate(45deg); }
+  .faq-body {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .55s ease, opacity .35s ease, padding .35s ease;
+  }
+  .faq-item[open] .faq-body {
+    max-height: 700px; opacity: 1;
+  }
+
+  /* Approach big number */
+  .approach-num {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    line-height: .9;
+    font-feature-settings: "lnum";
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    color: #2D3E2E;
+    opacity: .82;
+  }
+
+  /* Photo placeholder */
+  .photo-ph {
+    background:
+      repeating-linear-gradient(135deg, rgba(20,17,15,.04) 0 1px, transparent 1px 14px),
+      linear-gradient(180deg, #EDE6D4 0%, #DDD0B3 100%);
+    color: #5C5240;
+  }
+  .photo-ph .meta {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .portrait { filter: saturate(.82) contrast(.98); }
+
+  /* Focus visible */
+  :focus-visible { outline: 2px solid #2D3E2E; outline-offset: 3px; border-radius: 2px; }
+
+  /* Logo */
+  .logo { font-family: "Cormorant Garamond", serif; font-weight: 500; }
+  .logo .amp { color: #2D3E2E; }
+
+  /* Section padding */
+  .sec { padding-top: 6rem; padding-bottom: 6rem; }
+  @media (min-width: 768px) { .sec { padding-top: 8rem; padding-bottom: 8rem; } }
+  @media (min-width: 1024px) { .sec { padding-top: 10rem; padding-bottom: 10rem; } }
+  .container-x { max-width: 1280px; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+  @media (min-width: 1280px) { .container-x { padding-inline: 3rem; } }
+
+  /* Subtle divider */
+  .divider { height: 1px; background: #E5E0D5; }
+
+  /* Tinted bg */
+  .bg-tint { background: #FAF8F3; }
+</style>
+</head>
+
+<body class="bg-cream text-ink2">
+
+<!-- ============================== NAV ============================== -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50">
+  <div class="container-x flex items-center justify-between py-5">
+    <a href="index.html" class="logo leading-[1.2] flex flex-col">
+      <span class="text-[10.5px] tracking-[.22em] uppercase text-mute font-sans font-medium">Kancelaria Adwokacka</span>
+      <span class="text-[16px] md:text-[18px] tracking-[.02em] text-ink2 mt-0.5">Joanna Starzec - Orlik</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-9 text-[13.5px] text-ink2">
+      <a class="nav-link" href="index.html">Strona główna</a>
+      <a class="nav-link" href="index.html#about">O mnie</a>
+      <a class="nav-link active" href="index.html#practice">Specjalizacje</a>
+      <a class="nav-link" href="index.html#approach">Podejście</a>
+      <a class="nav-link" href="#contact">Kontakt</a>
+    </nav>
+
+    <div class="hidden md:block">
+      <a href="#contact" class="btn btn-primary">Umów konsultację <span class="btn-arrow">→</span></a>
+    </div>
+
+    <button id="hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10" aria-label="Otwórz menu">
+      <span class="block w-6 h-[1.5px] bg-ink2 relative">
+        <span class="absolute left-0 right-0 -top-2 h-[1.5px] bg-ink2"></span>
+        <span class="absolute left-0 right-0 top-2 h-[1.5px] bg-ink2"></span>
+      </span>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden absolute top-full inset-x-0 bg-cream border-b hairline">
+    <nav class="container-x flex flex-col gap-1 py-6 text-[15px]">
+      <a class="py-3 border-b hairline" href="index.html">Strona główna</a>
+      <a class="py-3 border-b hairline" href="index.html#about">O mnie</a>
+      <a class="py-3 border-b hairline text-accent" href="index.html#practice">Specjalizacje</a>
+      <a class="py-3 border-b hairline" href="index.html#approach">Podejście</a>
+      <a class="py-3 border-b hairline" href="#contact">Kontakt</a>
+      <a href="#contact" class="btn btn-primary mt-4 self-start">Umów konsultację <span class="btn-arrow">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ============================== HERO ============================== -->
+<section id="hero" class="relative pt-32 md:pt-36 pb-16 md:pb-24">
+  <div class="container-x">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Ścieżka" class="text-[12.5px] text-mute reveal flex items-center gap-2 flex-wrap">
+      <a href="index.html" class="hover:text-ink2">Strona główna</a>
+      <span class="text-mute/60">→</span>
+      <a href="index.html#practice" class="hover:text-ink2">Specjalizacje</a>
+      <span class="text-mute/60">→</span>
+      <span class="text-ink2">Prawo rodzinne</span>
+    </nav>
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mt-12 lg:mt-16 items-start">
+
+      <div class="lg:col-span-7 reveal">
+        <p class="eyebrow mt-2 mb-8">Prawo rodzinne</p>
+        <h1 class="display">
+          Wsparcie prawne <em>w najważniejszych</em> sprawach Twojej rodziny.
+        </h1>
+        <p class="mt-8 max-w-[58ch] text-[17px] md:text-[18px] leading-[1.75] text-ink2/85">
+          Rozwód, podział majątku, opieka nad dziećmi, alimenty — przeprowadzam Cię przez te momenty z empatią, dyskrecją i pełnym zaangażowaniem. Tam, gdzie da się zakończyć ugodą — szukamy ugody. Gdzie trzeba walczyć — walczę.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-primary">Porozmawiaj o swojej sprawie <span class="btn-arrow">→</span></a>
+          <a href="#services" class="btn btn-ghost">Zobacz, w czym pomagam</a>
+        </div>
+        <div class="mt-8 text-[12.5px] text-mute">Konsultacja online, telefoniczna lub w kancelarii · Kraków</div>
+      </div>
+
+      <div class="lg:col-span-5 reveal">
+        <!-- TODO: podmienić zdjęcie — sugerowane: detal (okno z porannym światłem, dłonie, książka). NIE stockowa uśmiechnięta rodzina. -->
+        <figure class="relative">
+          <div class="photo-ph portrait aspect-[3/4] rounded-sm overflow-hidden flex flex-col justify-between p-6">
+            <div class="meta">Detal · 3:4 · ciepły ton</div>
+            <div class="self-center text-center max-w-[18ch]">
+              <div class="font-serif italic text-[1.7rem] leading-snug">„Bez pośpiechu. Bez teatru.&nbsp;Z troską.”</div>
+            </div>
+            <div class="meta text-right">replace ➝ /img/family-detail.jpg</div>
+          </div>
+          <figcaption class="mt-3 text-[12px] text-mute flex justify-between">
+            <span class="eyebrow">— Prawo rodzinne</span>
+            <span>Kraków, 2026</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROBLEM ============================== -->
+<section class="sec border-t hairline">
+  <div class="container-x">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="eyebrow mb-5">Co tu naprawdę leży na stole</p>
+      <h2 class="h-section">Sprawy rodzinne dotykają tego, <em>co najcenniejsze.</em></h2>
+      <p class="mt-6 text-[17px] leading-[1.75] text-ink2/85 max-w-[55ch] mx-auto">
+        Bez doświadczonego adwokata łatwo o decyzje, których konsekwencje będą trwały latami — w portfelu, w relacjach, w codziennym życiu Twojego dziecka.
+      </p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-5 md:gap-6">
+      <article class="card p-8 reveal flex flex-col h-full">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M20 4l16 6v10c0 9-6 15-16 16C10 35 4 29 4 20V10l16-6z"/>
+          <path d="M14 19l4 4 8-9"/>
+        </svg>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-7">Niekorzystne rozstrzygnięcia</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.75] text-ink2/85">
+          Wyroki w sprawach rozwodowych, majątkowych i alimentacyjnych zostają z Tobą na lata. Każdy szczegół umowy lub orzeczenia ma realny wpływ na Twoją codzienność — i codzienność dziecka.
+        </p>
+      </article>
+
+      <article class="card p-8 reveal flex flex-col h-full">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="20" cy="20" r="14"/>
+          <path d="M12 14l16 12M28 14L12 26"/>
+        </svg>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-7">Eskalacja konfliktu</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.75] text-ink2/85">
+          Bez spokojnego pośrednika sprawy rodzinne łatwo zamieniają się w wojnę. Niepotrzebne emocje przekładają się na czas, koszty i relacje, których nie da się później odbudować.
+        </p>
+      </article>
+
+      <article class="card p-8 reveal flex flex-col h-full">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="14" cy="14" r="5"/>
+          <path d="M5 33c0-5 4-9 9-9s9 4 9 9"/>
+          <path d="M28 12v10M34 17h-12"/>
+        </svg>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-7">Utrata kontaktu z dzieckiem</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.75] text-ink2/85">
+          Złe ustalenia dotyczące kontaktów i władzy rodzicielskiej potrafią na lata ograniczyć Twoją obecność w życiu dziecka. W tych sprawach nie ma marginesu na pomyłkę.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES ============================== -->
+<section id="services" class="sec border-t hairline bg-tint">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Jak pomagam</p>
+      <h2 class="h-section">Sześć obszarów, w których prowadzę sprawy <em>osobiście.</em></h2>
+      <p class="mt-6 text-[17px] leading-[1.75] text-ink2/85 max-w-[58ch]">
+        Prawo rodzinne to coś więcej niż przepisy — to ludzie, emocje i decyzje, które zostają z nami na całe życie. Każdą sprawę prowadzę od pierwszej rozmowy aż do prawomocnego wyroku.
+      </p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border hairline">
+
+      <a href="#contact" class="service card !rounded-none !border-0 p-9 group flex flex-col h-full">
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow num-serif">01</span>
+          <span class="text-accent text-xl svc-arrow">→</span>
+        </div>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-6">Rozwód i separacja</h3>
+        <p class="mt-4 text-[15px] leading-[1.7] text-ink2/85">
+          Prowadzę sprawy rozwodowe i separacyjne — z orzekaniem o winie i bez. Pomagam ustalić strategię, przygotować pozew i pisma, reprezentuję na sali rozpraw.
+        </p>
+      </a>
+
+      <a href="#contact" class="service card !rounded-none !border-0 p-9 group flex flex-col h-full">
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow num-serif">02</span>
+          <span class="text-accent text-xl svc-arrow">→</span>
+        </div>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-6">Podział majątku wspólnego</h3>
+        <p class="mt-4 text-[15px] leading-[1.7] text-ink2/85">
+          Nieruchomości, oszczędności, nakłady z majątku osobistego, firma rodzinna. Analizuję cały dorobek związku i prowadzę sprawy zarówno ugodowe, jak i sądowe.
+        </p>
+      </a>
+
+      <a href="#contact" class="service card !rounded-none !border-0 p-9 group flex flex-col h-full">
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow num-serif">03</span>
+          <span class="text-accent text-xl svc-arrow">→</span>
+        </div>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-6">Władza rodzicielska i kontakty</h3>
+        <p class="mt-4 text-[15px] leading-[1.7] text-ink2/85">
+          Ustalenie miejsca zamieszkania dziecka, plan opieki naprzemiennej, harmonogram kontaktów, ograniczenie lub pozbawienie władzy rodzicielskiej.
+        </p>
+      </a>
+
+      <a href="#contact" class="service card !rounded-none !border-0 p-9 group flex flex-col h-full">
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow num-serif">04</span>
+          <span class="text-accent text-xl svc-arrow">→</span>
+        </div>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-6">Alimenty</h3>
+        <p class="mt-4 text-[15px] leading-[1.7] text-ink2/85">
+          Dochodzenie alimentów dla dziecka i małżonka, zmiana wysokości, egzekucja zaległych świadczeń. Reprezentuję obie strony — w zależności od sytuacji.
+        </p>
+      </a>
+
+      <a href="#contact" class="service card !rounded-none !border-0 p-9 group flex flex-col h-full">
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow num-serif">05</span>
+          <span class="text-accent text-xl svc-arrow">→</span>
+        </div>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-6">Ustalenie i zaprzeczenie ojcostwa</h3>
+        <p class="mt-4 text-[15px] leading-[1.7] text-ink2/85">
+          Sprawy o ustalenie ojcostwa, zaprzeczenie ojcostwa, ustalenie lub zaprzeczenie macierzyństwa. Prowadzę je z pełną dyskrecją i wsparciem na każdym etapie.
+        </p>
+      </a>
+
+      <a href="#contact" class="service card !rounded-none !border-0 p-9 group flex flex-col h-full">
+        <div class="flex items-start justify-between gap-4">
+          <span class="eyebrow num-serif">06</span>
+          <span class="text-accent text-xl svc-arrow">→</span>
+        </div>
+        <h3 class="font-serif text-[1.8rem] leading-tight mt-6">Sprawy małoletnich i przemoc domowa</h3>
+        <p class="mt-4 text-[15px] leading-[1.7] text-ink2/85">
+          Zobowiązanie do opuszczenia mieszkania, zakaz zbliżania, niebieska karta, ochrona dziecka. Działam szybko, gdy stawką jest bezpieczeństwo.
+        </p>
+      </a>
+    </div>
+
+    <div class="mt-14 reveal">
+      <a href="#contact" class="btn btn-primary">Umów konsultację <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== APPROACH ============================== -->
+<section class="sec border-t hairline">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Moje podejście</p>
+      <h2 class="h-section">Sprawy rodzinne wymagają <em>czegoś więcej</em> niż znajomość przepisów.</h2>
+      <p class="mt-6 text-[17px] leading-[1.75] text-ink2/85 max-w-[55ch]">
+        Trzy zasady, które towarzyszą każdej współpracy — bo prawnik w sprawie rodzinnej nie jest tylko pełnomocnikiem. Jest też świadkiem trudnego momentu, a od tego, jak się zachowa, dużo zależy.
+      </p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-10 lg:gap-14">
+
+      <div class="reveal">
+        <div class="approach-num num-serif">01</div>
+        <h3 class="font-serif text-[1.7rem] leading-tight mt-5">Słucham, zanim doradzę</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.75] text-ink2/85">
+          Każda sprawa zaczyna się od rozmowy bez zegarka. Muszę poznać fakty, ale przede wszystkim — Twoją perspektywę i to, na czym Ci naprawdę zależy.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <div class="approach-num num-serif">02</div>
+        <h3 class="font-serif text-[1.7rem] leading-tight mt-5">Stawiam na ugodę tam, gdzie to możliwe</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.75] text-ink2/85">
+          Najlepsze rozwiązania w prawie rodzinnym to te, które obie strony są w stanie zaakceptować. Mediacje i ugody chronią dzieci i zostawiają mniej blizn niż lata sporu sądowego.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <div class="approach-num num-serif">03</div>
+        <h3 class="font-serif text-[1.7rem] leading-tight mt-5">Walczę, kiedy trzeba</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.75] text-ink2/85">
+          Tam, gdzie ugoda nie wchodzi w grę — działam stanowczo. Z pełną dokumentacją, jasną strategią procesową i obecnością na każdej rozprawie.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DLA KOGO ============================== -->
+<section class="sec border-t hairline bg-tint">
+  <div class="container-x grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5 reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Dla kogo</p>
+      <h2 class="h-section">Pomagam, <em>gdy:</em></h2>
+      <p class="mt-6 text-[16px] leading-[1.75] text-ink2/85 max-w-[40ch]">
+        Sześć sytuacji, w których klienci najczęściej proszą mnie o wsparcie. Jeśli rozpoznajesz w którejś własną — porozmawiajmy.
+      </p>
+    </div>
+
+    <ul class="lg:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-4 reveal">
+      <li class="flex gap-4 border-b hairline pb-4">
+        <span class="text-accent mt-1">→</span>
+        <span class="text-[16px] leading-[1.6]">Rozważasz rozwód lub Twój małżonek wystąpił o jego orzeczenie</span>
+      </li>
+      <li class="flex gap-4 border-b hairline pb-4">
+        <span class="text-accent mt-1">→</span>
+        <span class="text-[16px] leading-[1.6]">Potrzebujesz uregulować kontakty z dzieckiem</span>
+      </li>
+      <li class="flex gap-4 border-b hairline pb-4">
+        <span class="text-accent mt-1">→</span>
+        <span class="text-[16px] leading-[1.6]">Walczysz o alimenty lub chcesz zmienić ich wysokość</span>
+      </li>
+      <li class="flex gap-4 border-b hairline pb-4">
+        <span class="text-accent mt-1">→</span>
+        <span class="text-[16px] leading-[1.6]">Chcesz uczciwie podzielić majątek po latach związku</span>
+      </li>
+      <li class="flex gap-4 border-b hairline pb-4">
+        <span class="text-accent mt-1">→</span>
+        <span class="text-[16px] leading-[1.6]">Doświadczasz przemocy i potrzebujesz szybkiej ochrony prawnej</span>
+      </li>
+      <li class="flex gap-4 border-b hairline pb-4">
+        <span class="text-accent mt-1">→</span>
+        <span class="text-[16px] leading-[1.6]">Planujesz spisać intercyzę lub zmienić ustrój majątkowy</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="sec border-t hairline">
+  <div class="container-x grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+    <div class="lg:col-span-4 reveal">
+      <p class="eyebrow eyebrow-rule mb-5">FAQ</p>
+      <h2 class="h-section">Najczęściej zadawane <em>pytania.</em></h2>
+      <p class="mt-6 text-[16px] leading-[1.75] text-ink2/85 max-w-[36ch]">
+        Krótkie odpowiedzi na pytania, które słyszę najczęściej podczas pierwszej konsultacji. Jeśli Twojego nie ma na liście — napisz, odpowiem.
+      </p>
+    </div>
+
+    <div class="lg:col-span-8">
+      <div class="divider"></div>
+
+      <details class="faq-item reveal">
+        <summary class="flex items-center justify-between py-7 gap-6">
+          <span class="font-serif text-[1.5rem] md:text-[1.7rem] leading-tight">Ile trwa sprawa rozwodowa?</span>
+          <span class="faq-icon text-accent text-3xl shrink-0">+</span>
+        </summary>
+        <div class="faq-body">
+          <p class="pb-7 pr-12 text-[16px] leading-[1.75] text-ink2/85 max-w-[60ch]">
+            Rozwód bez orzekania o winie i przy zgodzie obu stron może zakończyć się po 1–2 rozprawach (zwykle 3–6 miesięcy). Rozwód z orzekaniem o winie lub przy sporze co do dzieci i majątku trwa zwykle 1–3 lata. Po pierwszej rozmowie oceniam realistycznie, czego można się spodziewać w Twojej sprawie.
+          </p>
+        </div>
+      </details>
+      <div class="divider"></div>
+
+      <details class="faq-item reveal">
+        <summary class="flex items-center justify-between py-7 gap-6">
+          <span class="font-serif text-[1.5rem] md:text-[1.7rem] leading-tight">Czy muszę mieć adwokata przy rozwodzie?</span>
+          <span class="faq-icon text-accent text-3xl shrink-0">+</span>
+        </summary>
+        <div class="faq-body">
+          <p class="pb-7 pr-12 text-[16px] leading-[1.75] text-ink2/85 max-w-[60ch]">
+            Formalnie nie jest to wymagane. W praktyce — szczególnie gdy w grę wchodzi opieka nad dzieckiem, majątek lub wina — samodzielne prowadzenie sprawy często kończy się rozstrzygnięciem mniej korzystnym, niż było realnie możliwe. Dobry pełnomocnik zwraca się szybciej, niż mogłoby się wydawać.
+          </p>
+        </div>
+      </details>
+      <div class="divider"></div>
+
+      <details class="faq-item reveal">
+        <summary class="flex items-center justify-between py-7 gap-6">
+          <span class="font-serif text-[1.5rem] md:text-[1.7rem] leading-tight">Ile kosztuje sprawa rozwodowa?</span>
+          <span class="faq-icon text-accent text-3xl shrink-0">+</span>
+        </summary>
+        <div class="faq-body">
+          <p class="pb-7 pr-12 text-[16px] leading-[1.75] text-ink2/85 max-w-[60ch]">
+            Po pierwszej rozmowie przedstawiam jasną wycenę — stałą kwotę za prowadzenie sprawy albo rozliczenie etapowe. Opłata sądowa od pozwu rozwodowego to obecnie 600 zł. Bez ukrytych kosztów; każde dodatkowe pismo procesowe jest wcześniej ustalane.
+          </p>
+        </div>
+      </details>
+      <div class="divider"></div>
+
+      <details class="faq-item reveal">
+        <summary class="flex items-center justify-between py-7 gap-6">
+          <span class="font-serif text-[1.5rem] md:text-[1.7rem] leading-tight">Czy mogę uzyskać alimenty na siebie po rozwodzie?</span>
+          <span class="faq-icon text-accent text-3xl shrink-0">+</span>
+        </summary>
+        <div class="faq-body">
+          <p class="pb-7 pr-12 text-[16px] leading-[1.75] text-ink2/85 max-w-[60ch]">
+            Tak — jeśli rozwód został orzeczony z wyłącznej winy współmałżonka lub jeśli znajdujesz się w niedostatku, Kodeks rodzinny dopuszcza takie roszczenie. Sprawdzam zawsze, czy w Twojej sytuacji są ku temu podstawy.
+          </p>
+        </div>
+      </details>
+      <div class="divider"></div>
+
+      <details class="faq-item reveal">
+        <summary class="flex items-center justify-between py-7 gap-6">
+          <span class="font-serif text-[1.5rem] md:text-[1.7rem] leading-tight">Jak wygląda pierwsza konsultacja?</span>
+          <span class="faq-icon text-accent text-3xl shrink-0">+</span>
+        </summary>
+        <div class="faq-body">
+          <p class="pb-7 pr-12 text-[16px] leading-[1.75] text-ink2/85 max-w-[60ch]">
+            Spotykamy się w kancelarii, online lub telefonicznie. Trwa zwykle 60 minut. Słucham, zadaję pytania, opisuję możliwe drogi i orientacyjne koszty. Po konsultacji decydujesz, czy chcesz, żebym prowadziła sprawę — bez nacisku i automatycznych zobowiązań.
+          </p>
+        </div>
+      </details>
+      <div class="divider"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL ============================== -->
+<section class="relative bg-accent text-cream overflow-hidden">
+  <span class="deco-quote absolute -top-10 left-6 md:left-16">”</span>
+  <div class="container-x relative sec">
+    <div class="max-w-4xl reveal">
+      <p class="eyebrow text-sand mb-6">Słowa klientów</p>
+      <blockquote class="font-serif italic font-light text-[clamp(1.9rem,4.2vw,3.2rem)] leading-[1.18] tracking-[-0.005em]">
+        „Pani mecenas poprowadziła moją sprawę rozwodową z ogromnym wyczuciem. W trudnym czasie czułam, że mam kogoś, kto naprawdę mnie <span class="not-italic">wspiera</span> — bez teatru, bez pośpiechu, z pełną uwagą.”
+      </blockquote>
+      <footer class="mt-10 flex items-center gap-5">
+        <div class="w-12 h-12 rounded-full bg-sand/30 grid place-items-center font-serif text-cream text-lg">MW</div>
+        <div>
+          <div class="text-cream text-[15px]">Magdalena W.</div>
+          <div class="text-cream/70 text-[12.5px] tracking-wide">Klientka kancelarii · sprawa rozwodowa</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RELATED ============================== -->
+<section class="sec">
+  <div class="container-x">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+      <div>
+        <p class="eyebrow eyebrow-rule mb-5">Może Cię też zainteresować</p>
+        <h2 class="h-section max-w-[20ch]">Powiązane <em>specjalizacje.</em></h2>
+      </div>
+      <a href="index.html#practice" class="text-[14px] tracking-wide text-accent inline-flex items-center gap-2 group">
+        Wszystkie obszary <span class="transition-transform group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-5 md:gap-6">
+      <a href="index.html#practice" class="card p-9 flex flex-col h-full reveal">
+        <span class="eyebrow num-serif">01</span>
+        <h3 class="font-serif text-[1.9rem] leading-tight mt-4">Prawo spadkowe</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.7] text-ink2/85">
+          Testamenty, stwierdzenie nabycia spadku, dział spadku, zachowek. Plany sukcesyjne dla rodzin i firm.
+        </p>
+        <span class="mt-auto pt-8 text-[13.5px] tracking-wide text-accent inline-flex items-center gap-2">Zobacz <span class="btn-arrow">→</span></span>
+      </a>
+      <a href="index.html#practice" class="card p-9 flex flex-col h-full reveal">
+        <span class="eyebrow num-serif">02</span>
+        <h3 class="font-serif text-[1.9rem] leading-tight mt-4">Prawo cywilne</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.7] text-ink2/85">
+          Sprawy majątkowe i mieszkaniowe — umowy, nieruchomości, służebności, zniesienie współwłasności, odszkodowania.
+        </p>
+        <span class="mt-auto pt-8 text-[13.5px] tracking-wide text-accent inline-flex items-center gap-2">Zobacz <span class="btn-arrow">→</span></span>
+      </a>
+      <a href="#contact" class="card p-9 flex flex-col h-full reveal">
+        <span class="eyebrow num-serif">03</span>
+        <h3 class="font-serif text-[1.9rem] leading-tight mt-4">Mediacje rodzinne</h3>
+        <p class="mt-4 text-[15.5px] leading-[1.7] text-ink2/85">
+          Polubowne rozwiązywanie sporów rodzinnych — szybciej, taniej i mniej kosztownie emocjonalnie niż proces sądowy.
+        </p>
+        <span class="mt-auto pt-8 text-[13.5px] tracking-wide text-accent inline-flex items-center gap-2">Zapytaj <span class="btn-arrow">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact" class="sec border-t hairline">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow eyebrow-rule mb-5">Kontakt</p>
+      <h2 class="h-section">Twoja rodzina zasługuje na spokój. <em>Zaczynamy?</em></h2>
+      <p class="mt-6 text-[17px] leading-[1.75] text-ink2/85 max-w-[55ch]">
+        Pierwsza rozmowa jest niezobowiązująca. Opowiedz, co się dzieje — wspólnie ustalimy najlepszy plan działania. Wszystko, co powiesz, traktuję poufnie.
+      </p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+      <aside class="lg:col-span-5 reveal">
+        <div class="space-y-10">
+          <div>
+            <p class="eyebrow">Kancelaria</p>
+            <p class="font-serif text-[1.5rem] leading-snug mt-3">
+              ul. [ADRES], 00-000 Kraków<br />
+              <span class="text-ink2/70 text-[1.15rem]">II piętro, wejście od dziedzińca</span>
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <p class="eyebrow">Telefon</p>
+              <a href="tel:+48000000000" class="font-serif text-[1.35rem] mt-3 inline-block hover:text-accent">+48 [TELEFON]</a>
+            </div>
+            <div>
+              <p class="eyebrow">E-mail</p>
+              <a href="/cdn-cgi/l/email-protection#402b2f2e34212b34002b212e23252c213229216e302c" class="font-serif text-[1.35rem] mt-3 inline-block hover:text-accent">[EMAIL]</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="eyebrow">Godziny przyjęć</p>
+            <dl class="font-serif text-[1.2rem] mt-3 space-y-1">
+              <div class="flex justify-between max-w-[18rem]"><dt>Poniedziałek — Czwartek</dt><dd>9:00 — 18:00</dd></div>
+              <div class="flex justify-between max-w-[18rem]"><dt>Piątek</dt><dd>9:00 — 15:00</dd></div>
+              <div class="flex justify-between max-w-[18rem] text-mute"><dt>Sobota i Niedziela</dt><dd>po umówieniu</dd></div>
+            </dl>
+          </div>
+
+          <div class="pt-4 border-t hairline">
+            <p class="text-[13px] leading-[1.7] text-mute max-w-[42ch]">
+              <span class="text-ink2 font-medium">Tajemnica adwokacka.</span>
+              Wszystko, czym podzielisz się ze mną podczas konsultacji i w trakcie współpracy, objęte jest tajemnicą zawodową — bez wyjątków.
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <form id="contactForm" class="lg:col-span-7 reveal" novalidate>
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-7">
+          <label class="block">
+            <span class="field-label">Imię i nazwisko</span>
+            <input class="field" name="name" type="text" placeholder="Jak się do Ciebie zwracać?" required />
+          </label>
+          <label class="block">
+            <span class="field-label">E-mail</span>
+            <input class="field" name="email" type="email" placeholder="twoj@email.pl" required />
+          </label>
+          <label class="block">
+            <span class="field-label">Telefon (opcjonalnie)</span>
+            <input class="field" name="phone" type="tel" placeholder="+48" />
+          </label>
+          <label class="block">
+            <span class="field-label">Czego dotyczy sprawa</span>
+            <select class="field" name="topic">
+              <option value="">— wybierz —</option>
+              <option>Rozwód lub separacja</option>
+              <option>Alimenty</option>
+              <option>Opieka nad dziećmi / kontakty</option>
+              <option>Podział majątku</option>
+              <option>Przemoc domowa / pilna ochrona</option>
+              <option>Inne</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="field-label">Opisz krótko sytuację</span>
+            <textarea class="field" name="message" placeholder="W kilku zdaniach — bez szczegółów wrażliwych. Resztę dopowiemy w rozmowie." required></textarea>
+          </label>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <p class="text-[12px] text-mute leading-relaxed max-w-md">
+            Wysyłając formularz akceptujesz <a class="underline underline-offset-2" href="#">politykę prywatności</a>. Po nawiązaniu współpracy korespondencja objęta jest tajemnicą adwokacką.
+          </p>
+          <button type="submit" class="btn btn-primary self-start sm:self-auto">
+            <span id="submitText">Wyślij wiadomość</span> <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+        <p id="formOk" class="hidden mt-6 text-[14px] text-accent">Dziękuję — wiadomość została zarejestrowana. Odpowiem osobiście w ciągu jednego dnia roboczego.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-ink text-cream">
+  <div class="container-x pt-20 pb-10">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <div class="logo leading-[1.2] flex flex-col">
+          <span class="text-[10.5px] tracking-[.22em] uppercase text-sand font-sans font-medium">Kancelaria Adwokacka</span>
+          <span class="text-[18px] tracking-[.02em] text-cream mt-0.5">Joanna Starzec - Orlik</span>
+        </div>
+        <p class="mt-6 text-[15px] leading-[1.7] text-cream/75 max-w-md">
+          Kancelaria Adwokacka adw. Joanny Starzec - Orlik. Praktyka skoncentrowana na prawie rodzinnym, spadkowym, cywilnym i gospodarczym. Kraków · cała Polska.
+        </p>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="eyebrow text-sand">Nawigacja</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-cream/85">
+          <li><a class="hover:text-sand" href="index.html">Strona główna</a></li>
+          <li><a class="hover:text-sand" href="index.html#about">O mnie</a></li>
+          <li><a class="hover:text-sand" href="index.html#practice">Specjalizacje</a></li>
+          <li><a class="hover:text-sand" href="index.html#approach">Podejście</a></li>
+          <li><a class="hover:text-sand" href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="eyebrow text-sand">Kontakt</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-cream/85">
+          <li>ul. [ADRES], 00-000 Kraków</li>
+          <li><a class="hover:text-sand" href="tel:+48000000000">+48 [TELEFON]</a></li>
+          <li><a class="hover:text-sand" href="/cdn-cgi/l/email-protection#8ae1e5e4feebe1fecae1ebe4e9efe6ebf8e3eba4fae6">[EMAIL]</a></li>
+          <li class="text-cream/55 text-[13px] pt-2">NIP 000-000-00-00 · Izba Adwokacka w Krakowie</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-[12.5px] text-cream/65">
+      <div>© 2026 Kancelaria Adwokacka Joanna Starzec - Orlik. Wszystkie prawa zastrzeżone.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-sand">Polityka prywatności</a>
+        <a href="#" class="hover:text-sand">Regulamin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== JS ============================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Sticky nav style on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    ham.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Reveal on scroll, with stagger inside grids
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        // small per-element stagger for grid siblings
+        const parent = e.target.parentElement;
+        const sibs = parent ? Array.from(parent.children).filter(c => c.classList.contains('reveal')) : [];
+        const idx = sibs.indexOf(e.target);
+        e.target.style.transitionDelay = (idx > 0 ? Math.min(idx, 4) * 100 : 0) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Smooth-close any other open <details> so only one FAQ is open at a time (optional UX)
+  document.querySelectorAll('.faq-item').forEach((d) => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        document.querySelectorAll('.faq-item').forEach(o => { if (o !== d) o.open = false; });
+      }
+    });
+  });
+
+  // Form fake submit
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    document.getElementById('submitText').textContent = 'Wysłano';
+    document.getElementById('formOk').classList.remove('hidden');
+    form.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+  });
+</script>
+
+</body>
+</html>

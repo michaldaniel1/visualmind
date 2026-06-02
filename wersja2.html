@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kancelaria Adwokacka Joanna Starzec-Orlik — Kraków</title>
+<meta name="description" content="Kancelaria Adwokacka Joanna Starzec-Orlik. Prawo rodzinne, rodzinne majątkowe, spadkowe, nieruchomości, gospodarcze. Kraków." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: "#FFFFFF",
+          ink:   "#141414",
+          ink2:  "#2A2A2A",
+          mute:  "#6B6B6B",
+          faint: "#9A9A9A",
+          line:  "#E4E2DD",
+          wash:  "#F4F2ED",
+          fog:   "#DEDCD6",
+        },
+        fontFamily: {
+          sans:  ['"Instrument Sans"', "ui-sans-serif", "system-ui", "sans-serif"],
+          serif: ['"Instrument Serif"', "Georgia", "serif"],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #FFFFFF;
+    color: #141414;
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+  }
+
+  .eyebrow {
+    font-size: 12px; letter-spacing: .04em;
+    font-weight: 400; color: #262626;
+  }
+  .hairline { border-color: #E4E2DD; }
+
+  /* Logo — the one serif in the design */
+  .logo-name { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: .005em; }
+
+  /* Display / section heads — Instrument Sans, hierarchy via size + weight */
+  .h-hero {
+    font-weight: 400; line-height: 1.08; letter-spacing: -0.02em;
+    font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+  }
+  .h-section {
+    font-weight: 400; line-height: 1.1; letter-spacing: -0.015em;
+    font-size: clamp(1.6rem, 2.6vw, 2.15rem);
+  }
+  .h-spec { font-weight: 500; font-size: 1.05rem; letter-spacing: -0.01em; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .72rem 1.2rem; font-size: 13.5px; letter-spacing: .01em; font-weight: 500;
+    border-radius: 3px; transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn-primary { background: #141414; color: #FFFFFF; }
+  .btn-primary:hover { background: #2A2A2A; transform: translateY(-1px); }
+  .btn-ghost { color: #141414; border: 1px solid #141414; }
+  .btn-ghost:hover { background: #141414; color: #FFFFFF; border-color: #141414; }
+  .btn-arrow { transition: transform .25s ease; display: inline-block; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Nav links */
+  .nav-link { position: relative; font-weight: 400; font-size: 14px; color: #2A2A2A; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
+    height: 1px; background: #141414; transform: scaleX(0); transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* Inputs underline-only */
+  .field {
+    width: 100%; background: transparent; border: 0; border-bottom: 1px solid #C7C4BD;
+    padding: .8rem 0 .7rem; font-size: 15px; color: #141414; font-family: inherit;
+    outline: none; transition: border-color .25s ease;
+  }
+  .field::placeholder { color: #9A9A9A; }
+  .field:focus { border-color: #141414; }
+  textarea.field { min-height: 5.5rem; resize: vertical; }
+  .field-label { font-size: 13px; color: #6B6B6B; font-weight: 400; }
+
+  /* Sticky nav */
+  #nav { transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease; border-bottom: 1px solid transparent; }
+  #nav.scrolled {
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid #E4E2DD;
+  }
+
+  /* Mobile drawer */
+  #mobileMenu { transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease; transform: translateY(-12px); opacity: 0; pointer-events: none; }
+  #mobileMenu.open { transform: none; opacity: 1; pointer-events: auto; }
+
+  /* Photo placeholder */
+  .photo-ph {
+    background:
+      repeating-linear-gradient(135deg, rgba(20,20,20,.04) 0 1px, transparent 1px 14px),
+      #DEDCD6;
+    color: #6B6B6B;
+  }
+  .photo-ph .meta { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+
+  /* Quote bold emphasis */
+  .q-strong { font-weight: 600; font-style: italic; }
+
+  /* Lattice-style soft frame for "O mnie" */
+  .about-frame {
+    background: #F4F2ED;
+  }
+
+  :focus-visible { outline: 2px solid #141414; outline-offset: 3px; border-radius: 3px; }
+
+  .sec { padding-top: 5rem; padding-bottom: 5rem; }
+  @media (min-width: 768px) { .sec { padding-top: 7rem; padding-bottom: 7rem; } }
+  @media (min-width: 1024px) { .sec { padding-top: 8.5rem; padding-bottom: 8.5rem; } }
+  .container-x { max-width: 1180px; margin-inline: auto; padding-inline: 1.5rem; }
+  @media (min-width: 768px) { .container-x { padding-inline: 2.5rem; } }
+  @media (min-width: 1280px) { .container-x { padding-inline: 3.5rem; } }
+
+  /* Specjalizacje: górny padding zmniejszony o 70% */
+  #specjalizacje.sec { padding-top: 1.5rem; }
+  @media (min-width: 768px) { #specjalizacje.sec { padding-top: 2.1rem; } }
+  @media (min-width: 1024px) { #specjalizacje.sec { padding-top: 2.55rem; } }
+</style>
+</head>
+
+<body class="bg-paper text-ink">
+
+<!-- ============================== NAV ============================== -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50">
+  <div class="container-x flex items-center justify-between py-5">
+    <a href="#top" class="leading-tight">
+      <span class="eyebrow block font-normal">Adwokat</span>
+      <span class="font-sans font-normal italic block text-[20px] md:text-[22px] tracking-[-0.01em] mt-1">Joanna Starzec-Orlik</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9">
+      <a class="nav-link" href="#top">Strona główna</a>
+      <a class="nav-link" href="#about">O mnie</a>
+      <a class="nav-link" href="#specjalizacje">Specjalizacje</a>
+      <a class="nav-link" href="#opinie">Opinie</a>
+      <a class="nav-link" href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="hidden lg:flex flex-col items-end gap-1">
+      <a href="#kontakt" class="btn btn-ghost">Umów konsultację</a>
+    </div>
+
+    <button id="hamburger" class="lg:hidden inline-flex items-center justify-center w-10 h-10" aria-label="Otwórz menu">
+      <span class="block w-6 h-[1.5px] bg-ink relative">
+        <span class="absolute left-0 right-0 -top-2 h-[1.5px] bg-ink"></span>
+        <span class="absolute left-0 right-0 top-2 h-[1.5px] bg-ink"></span>
+      </span>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden absolute top-full inset-x-0 bg-paper border-b hairline">
+    <nav class="container-x flex flex-col gap-1 py-6 text-[15px]">
+      <a class="py-3 border-b hairline" href="#top">Strona główna</a>
+      <a class="py-3 border-b hairline" href="#about">O mnie</a>
+      <a class="py-3 border-b hairline" href="#specjalizacje">Specjalizacje</a>
+      <a class="py-3 border-b hairline" href="#opinie">Opinie</a>
+      <a class="py-3 border-b hairline" href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn btn-ghost mt-4 self-start">Umów konsultację <span class="btn-arrow">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ============================== HERO ============================== -->
+<section class="pt-40 md:pt-48 pb-20 md:pb-28">
+  <div class="container-x text-center">
+    <h1 class="h-hero max-w-[18ch] mx-auto reveal">
+      Pomoc prawna dla firm i&nbsp;klientów indywidualnych
+    </h1>
+
+    <blockquote class="reveal mt-12 md:mt-16 max-w-[58ch] mx-auto text-[15.5px] md:text-[16px] italic leading-[1.7] text-ink2">
+      „Bardzo polecam Panią Joannę Starzec. Pani Mecenas jest nie tylko bardzo kompetentnym i skutecznym prawnikiem, ale też niezwykle empatyczną i cierpliwą osobą. <span class="q-strong">Serdecznie polecam Panią Adwokat każdemu, kto potrzebuje prawdziwego wsparcia prawnego.</span>”
+    </blockquote>
+    <div class="reveal mt-10 flex flex-col sm:flex-row justify-center items-center gap-3">
+      <a href="tel:+48607656387" class="btn btn-ghost">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6.6 10.8a13 13 0 0 0 5.6 5.6l1.9-1.9c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1v3c0 .6-.4 1-1 1A16.5 16.5 0 0 1 3 5c0-.6.4-1 1-1h3c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1l-1.7 1.2z"/>
+        </svg>
+        +48 607 656 387
+      </a>
+      <a href="#kontakt" class="btn btn-ghost">Umów konsultację</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== O MNIE ============================== -->
+<section id="about" class="sec">
+  <div class="container-x" style="max-width:1340px">
+    <div class="about-frame reveal rounded-[3px] px-8 md:px-16 lg:px-24 pt-16 md:pt-24 lg:pt-28 pb-8 md:pb-16 lg:pb-20">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+        <div class="lg:col-span-5">
+          <!-- TODO: podmienić zdjęcie portretowe (1:1) -->
+          <div class="photo-ph aspect-square w-full max-w-[520px] overflow-hidden flex flex-col justify-between p-6 rounded-[3px]">
+            <div class="meta">Portret · 1:1</div>
+            <div class="self-center text-center">
+              <div class="logo-name text-[2.4rem] leading-none">JSO</div>
+              <div class="meta mt-3">[ Zdjęcie portretowe ]</div>
+            </div>
+            <div class="meta text-right">replace ➝ /img/portret.jpg</div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <h2 class="h-section text-[1.4rem]">O mnie</h2>
+          <div class="font-sans font-normal italic text-[2.2rem] md:text-[2.8rem] leading-tight tracking-[-0.015em] mt-2">Joanna Starzec-Orlik</div>
+          <p class="mt-6 text-[15px] leading-[1.75] text-ink2 max-w-[60ch]">
+            Od blisko 20 lat doradzam osobom fizycznym oraz podmiotom prowadzącym działalność gospodarczą. Reprezentuję ich interesy w sporach sądowych, sporządzając umowy, opinie i analizy prawne, a także prowadząc mediacje i negocjacje. Doświadczenie zawodowe zdobywałam współpracując z kancelariami adwokackimi w Krakowie, jak również prowadząc własną kancelarię. Jako członek Krakowskiej Izby Adwokackiej oraz absolwentka Wydziału Prawa i Administracji Uniwersytetu Jagiellońskiego oferuję profesjonalną i kompleksową obsługę prawną firm, a także doradztwo na rzecz klientów indywidualnych.
+          </p>
+
+          <div class="mt-12">
+            <h3 class="h-section text-[1.4rem]">Kwalifikacje</h3>
+            <ul class="mt-6 space-y-3.5 max-w-[58ch]">
+              <li class="flex gap-3.5 text-[15px] leading-[1.6] text-ink2"><span class="text-faint text-[1.1em] leading-none mt-[2px]">•</span><span>Absolwentka Wydziału Prawa i Administracji Uniwersytetu Jagiellońskiego w Krakowie</span></li>
+              <li class="flex gap-3.5 text-[15px] leading-[1.6] text-ink2"><span class="text-faint text-[1.1em] leading-none mt-[2px]">•</span><span>Aplikantka adwokacka przy Okręgowej Radzie Adwokackiej w Krakowie, wpisana na listę adwokatów w 2013 roku</span></li>
+              <li class="flex gap-3.5 text-[15px] leading-[1.6] text-ink2"><span class="text-faint text-[1.1em] leading-none mt-[2px]">•</span><span>Członkini Krakowskiej Izby Adwokackiej od 2009 roku</span></li>
+              <li class="flex gap-3.5 text-[15px] leading-[1.6] text-ink2"><span class="text-faint text-[1.1em] leading-none mt-[2px]">•</span><span>Absolwentka studiów podyplomowych z zakresu doradztwa podatkowego na Uniwersytecie Ekonomicznym w Krakowie</span></li>
+              <li class="flex gap-3.5 text-[15px] leading-[1.6] text-ink2"><span class="text-faint text-[1.1em] leading-none mt-[2px]">•</span><span>Posługuje się językiem niemieckim (certyfikat DSD II) oraz językiem angielskim</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SPECJALIZACJE ============================== -->
+<section id="specjalizacje" class="sec">
+  <div class="container-x">
+    <h2 class="h-section reveal">Specjalizacje</h2>
+
+    <div class="mt-12 md:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14">
+
+      <div class="reveal">
+        <h3 class="h-spec">Prawo rodzinne</h3>
+        <div class="mt-4 h-px w-10 bg-fog"></div>
+        <p class="mt-4 text-[15px] leading-[1.7] text-mute">
+          Rozwód, separacja, alimenty, władza rodzicielska, kontakty z dziećmi, decyzje w istotnych sprawach dotyczących życia dziecka, porozumienia rodzicielskie, przysposobienie, ubezwłasnowolnienie
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="h-spec">Prawo rodzinne majątkowe</h3>
+        <div class="mt-4 h-px w-10 bg-fog"></div>
+        <p class="mt-4 text-[15px] leading-[1.7] text-mute">
+          Ustanowienie rozdzielności majątkowej, podział majątku wspólnego po rozwodzie, zagadnienia majątkowe pomiędzy małżonkami, rozliczenia między konkubentami
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="h-spec">Prawo spadkowe</h3>
+        <div class="mt-4 h-px w-10 bg-fog"></div>
+        <p class="mt-4 text-[15px] leading-[1.7] text-mute">
+          Nabycie spadku, dział spadku, zachowek, projekty testamentów, pomoc przy umowach notarialnych dotyczących spadku
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="h-spec">Prawo nieruchomości</h3>
+        <div class="mt-4 h-px w-10 bg-fog"></div>
+        <p class="mt-4 text-[15px] leading-[1.7] text-mute">
+          Analiza stanu prawnego nieruchomości, projektowanie i opiniowanie umów dotyczących obrotu nieruchomościami, regulowanie stanu prawnego, pomoc przy aktach notarialnych, zniesienie współwłasności, ochrona własności i posiadania, zasiedzenie nieruchomości, umowy dzierżawy, najmu, użyczenia, służebności
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="h-spec">Prawo gospodarcze</h3>
+        <div class="mt-4 h-px w-10 bg-fog"></div>
+        <p class="mt-4 text-[15px] leading-[1.7] text-mute">
+          Kompleksowa obsługa prawna przedsiębiorców, prawo spółek handlowych, umowy gospodarcze, opinie i analizy prawne, rejestracja, przekształcanie i likwidacja podmiotów gospodarczych
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="h-spec">Zastępstwo procesowe</h3>
+        <div class="mt-4 h-px w-10 bg-fog"></div>
+        <p class="mt-4 text-[15px] leading-[1.7] text-mute">
+          Zastępstwo procesowe przed sądami w sprawach cywilnych, rodzinnych i gospodarczych, odszkodowanie, zadośćuczynienie, roszczenie o zapłatę, niewykonanie lub nienależyte wykonanie umowy, spory dotyczące umowy ubezpieczenia
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== OPINIE ============================== -->
+<section id="opinie" class="sec" style="background:#F0EEE5">
+  <div class="container-x">
+    <h2 class="h-section reveal">Opinie</h2>
+
+    <div class="mt-8 md:mt-12 grid lg:grid-cols-2 gap-4 md:gap-5 items-stretch">
+
+      <!-- Featured quote -->
+      <figure class="reveal bg-white rounded-[3px] p-8 md:p-12 flex flex-col">
+        <blockquote class="italic leading-[1.5] text-ink2 text-[1.35rem] md:text-[1.6rem] tracking-[-0.01em]">
+          „Z pełnym przekonaniem polecam Panią Mecenas. Moją sprawą zajęła się z ogromnym profesjonalizmem, zaangażowaniem i dbałością o każdy szczegół. Na każdym etapie mogłam liczyć na rzetelne wyjaśnienia, sprawny kontakt oraz poczucie bezpieczeństwa i pełnego wsparcia.”
+        </blockquote>
+        <figcaption class="mt-auto pt-10 eyebrow">Anna</figcaption>
+      </figure>
+
+      <!-- Right column -->
+      <div class="flex flex-col gap-4 md:gap-5">
+
+        <figure class="reveal bg-white rounded-[3px] p-8 md:p-9 flex flex-col flex-1">
+          <blockquote class="text-[15px] italic leading-[1.7] text-ink2">
+            „Bardzo polecam Panią Joannę Starzec. Pani Mecenas jest nie tylko bardzo kompetentnym i skutecznym prawnikiem, ale też niezwykle empatyczną i cierpliwą osobą.”
+          </blockquote>
+          <figcaption class="mt-auto pt-6 eyebrow">Natalia</figcaption>
+        </figure>
+
+        <figure class="reveal bg-white rounded-[3px] p-8 md:p-9 flex flex-col flex-1">
+          <blockquote class="text-[15px] italic leading-[1.7] text-ink2">
+            „Korzystałem z usług Pani Adwokat Joanny Starzec wiele razy. Gorąco polecam. Każda sprawa zakończona sukcesem. W moim przypadku 100% skuteczności.”
+          </blockquote>
+          <figcaption class="mt-auto pt-6 eyebrow">Cezary</figcaption>
+        </figure>
+
+        <a href="https://share.google/cItWEtGviuioMcmiO" target="_blank" rel="noopener"
+           class="reveal group bg-transparent border border-ink text-ink rounded-[3px] p-8 md:p-9 flex items-center justify-between gap-6 transition-colors hover:bg-ink hover:text-paper">
+          <span class="text-[16px] md:text-[17px] font-medium">Sprawdź opinie na Google</span>
+          <span class="text-xl transition-transform group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== KONTAKT ============================== -->
+<section id="kontakt" class="sec">
+  <div class="container-x">
+    <h2 class="h-section reveal">Kontakt</h2>
+
+    <div class="mt-12 md:mt-16 grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+      <aside class="lg:col-span-5 reveal">
+        <p class="text-[15px] leading-[1.75] text-ink2 max-w-[44ch]">
+          Udzielam porad prawnych, również w formie konsultacji zdalnych, oraz reprezentuję klientów w sporach sądowych. Biorę udział w negocjacjach i mediacjach, pomagając stronom osiągnąć porozumienie. Specjalizuję się w prowadzeniu postępowań sądowych.
+        </p>
+
+        <dl class="mt-12 space-y-8">
+          <div>
+            <dt class="eyebrow">Adres</dt>
+            <dd class="mt-3 text-[15px] leading-[1.7] text-ink2">
+              Kancelaria Adwokacka Joanna Starzec-Orlik<br />
+              ul. Bandurskiego 8/1<br />
+              31-515 Kraków
+            </dd>
+          </div>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <dt class="eyebrow">Telefon</dt>
+              <dd class="mt-3"><a href="tel:+48607656387" class="text-[15px] text-ink2 hover:text-ink hover:underline underline-offset-2">+48 607 656 387</a></dd>
+            </div>
+            <div>
+              <dt class="eyebrow">E-mail</dt>
+              <dd class="mt-3"><a href="/cdn-cgi/l/email-protection#127376657d79736652787d737c7c73616673606877713c627e" class="text-[15px] text-ink2 hover:text-ink hover:underline underline-offset-2 break-all"><span class="__cf_email__" data-cfemail="533237243c38322713393c323d3d32202732212936307d233f">[email&#160;protected]</span></a></dd>
+            </div>
+          </div>
+        </dl>
+      </aside>
+
+      <form id="contactForm" class="lg:col-span-7 reveal" novalidate>
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+          <label class="block">
+            <span class="field-label">Imię i nazwisko</span>
+            <input class="field" name="name" type="text" required />
+          </label>
+          <label class="block">
+            <span class="field-label">E-mail</span>
+            <input class="field" name="email" type="email" required />
+          </label>
+          <label class="block">
+            <span class="field-label">Telefon</span>
+            <input class="field" name="phone" type="tel" />
+          </label>
+          <label class="block">
+            <span class="field-label">Skąd dowiedziałeś/aś się o kancelarii</span>
+            <input class="field" name="source" type="text" />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="field-label">W czym mogę pomóc?</span>
+            <textarea class="field" name="message" required></textarea>
+          </label>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-6">
+          <button type="submit" class="btn btn-ghost self-start sm:self-auto shrink-0 whitespace-nowrap">
+            <span id="submitText">Wyślij wiadomość</span> <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+        <p id="formOk" class="hidden mt-6 text-[14px] text-ink">Dziękuję — wiadomość została zarejestrowana. Odpowiem osobiście najszybciej, jak to możliwe.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-wash">
+  <div class="container-x pt-16 pb-10">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <span class="eyebrow block">Adwokat</span>
+        <span class="font-sans font-normal italic block text-[22px] tracking-[-0.01em] mt-1">Joanna Starzec-Orlik</span>
+        <p class="mt-6 text-[15px] leading-[1.7] text-mute max-w-md">
+          Kancelaria Adwokacka Joanny Starzec-Orlik. Praktyka skoncentrowana na prawie rodzinnym, rodzinnym majątkowym, spadkowym, nieruchomości i gospodarczym.
+        </p>
+        <p class="mt-4 text-[15px] text-mute">Izba Adwokacka w Krakowie.</p>
+      </div>
+
+      <div class="md:col-span-3">
+        <p class="eyebrow">Nawigacja</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-ink2">
+          <li><a class="hover:text-ink hover:underline underline-offset-2" href="#top">Strona główna</a></li>
+          <li><a class="hover:text-ink hover:underline underline-offset-2" href="#about">O mnie</a></li>
+          <li><a class="hover:text-ink hover:underline underline-offset-2" href="#specjalizacje">Specjalizacje</a></li>
+          <li><a class="hover:text-ink hover:underline underline-offset-2" href="#opinie">Opinie</a></li>
+          <li><a class="hover:text-ink hover:underline underline-offset-2" href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4">
+        <p class="eyebrow">Dane kancelarii</p>
+        <p class="mt-5 text-[15px] leading-[1.7] text-ink2">
+          Kancelaria Adwokacka Joanna Starzec-Orlik<br />
+          ul. Bandurskiego 8/1<br />
+          31-515 Kraków<br />
+          <span class="text-mute">NIP: 679 268 99 76</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t hairline flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-[12.5px] text-mute">
+      <div>© 2026 Kancelaria Adwokacka Joanna Starzec-Orlik. Wszystkie prawa zastrzeżone.</div>
+      <div><a href="#" class="hover:text-ink hover:underline underline-offset-2">Polityka Prywatności</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== JS ============================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    ham.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        const parent = e.target.parentElement;
+        const sibs = parent ? Array.from(parent.children).filter(c => c.classList.contains('reveal')) : [];
+        const idx = sibs.indexOf(e.target);
+        e.target.style.transitionDelay = (idx > 0 ? Math.min(idx, 5) * 90 : 0) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    document.getElementById('submitText').textContent = 'Wysłano';
+    document.getElementById('formOk').classList.remove('hidden');
+    form.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+  });
+</script>
+
+</body>
+</html>
